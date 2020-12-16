@@ -1,9 +1,0 @@
-#! /bin/tail -n+2
-libcurl4
-libjansson4
-libssl1.1
-libgmp10
-libmpc3
-libmpfr6
-libisl22
-zlib1g
