@@ -1,0 +1,15 @@
+#! /usr/bin/env -S tail -n+2
+git
+build-essential
+autoconf
+automake
+
+libcurl4-openssl-dev
+libjansson-dev
+libssl-dev
+libgmp-dev
+libmpc-dev
+libmpfr-dev
+libisl-dev
+zlib1g-dev
+
