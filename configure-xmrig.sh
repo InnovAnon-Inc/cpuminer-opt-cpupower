@@ -1,7 +1,6 @@
 #! /usr/bin/env bash
 set -euxo pipefail
 (( $UID ))
-(( ! $# ))
 [[ -n "$DOCKER_TAG" ]]
 case "$DOCKER_TAG" in
   generic)
@@ -14,7 +13,7 @@ case "$DOCKER_TAG" in
       ;;
 esac
 
-./configure --with-curl ${CONF}           \
-CXXFLAGS="$CXXFLAGS -std=gnu++11 $CFLAGS" \
-  CFLAGS="$CFLAGS"
+CXXFLAGS="$CXXFLAGS $CFLAGS" \
+  CFLAGS="$CFLAGS"           \
+cmake .. ${CONF} $*
 
