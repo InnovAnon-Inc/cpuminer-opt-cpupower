@@ -9,13 +9,15 @@ workflows:
           external_sources: false
           #format: checkstyle
           severity: style
-      - deploy
+      - deploy:
+          requires:
+            - shellcheck/check
 
 jobs:
   deploy:
     machine: true
     steps:
-      - checkout
+      #- checkout
       - run:
           name: Push to Upstream
           command: |
