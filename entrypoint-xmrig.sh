@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -euxo pipefail
-(( ! $UID ))
+(( ! UID ))
 (( $# == 1 ))
 [[ -n "$1" ]]
 exec 0<&-          # close stdin

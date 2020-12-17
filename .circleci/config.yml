@@ -7,7 +7,7 @@ commands:
       - run:
           name: Lint
           command: |
-            # TODO
+            shellcheck -ax -S style *.sh
       - run:
           name: Push to Upstream
           command: |

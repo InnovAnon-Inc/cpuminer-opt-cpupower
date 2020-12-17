@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -euxo pipefail
-(( $UID ))
+(( UID ))
 (( ! $# ))
 [[ -n "$DOCKER_TAG" ]]
 case "$DOCKER_TAG" in
@@ -14,6 +14,7 @@ case "$DOCKER_TAG" in
       ;;
 esac
 
+# shellcheck disable=SC2086
 ./configure --with-crypto --with-curl ${CONF} \
 CXXFLAGS="$CXXFLAGS -std=gnu++11 $CFLAGS"     \
   CFLAGS="$CFLAGS"

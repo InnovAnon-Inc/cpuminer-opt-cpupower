@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -euxo pipefail
-(( ! $UID ))
+(( ! UID ))
 (( $# == 1 ))
 [[ -n "$1" ]]
 [[ -f "/conf.d/$1.json" ]]

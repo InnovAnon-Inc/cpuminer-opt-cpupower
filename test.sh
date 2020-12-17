@@ -1,13 +1,13 @@
 #! /usr/bin/env bash
 set -euxo pipefail
-(( ! $UID ))
+(( ! UID ))
 (( ! $# ))
 case $# in
   0)
     ARGS=default
     ;;
   *)
-    ARGS="$@"
+    ARGS=("$@")
     ;;
 esac
 
@@ -16,7 +16,7 @@ esac
 [[ "$DOCKER_TAG" = generic ]] ||
 exit 0
 
-/usr/local/bin/entrypoint ${ARGS[@]} &
+/usr/local/bin/entrypoint "${ARGS[@]}" &
 P="$!"
 #sleep 31
 sleep 19
