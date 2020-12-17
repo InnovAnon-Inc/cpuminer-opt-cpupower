@@ -3,6 +3,7 @@ git
 build-essential
 autoconf
 automake
+pkg-config
 
 libcurl4-openssl-dev
 libjansson-dev

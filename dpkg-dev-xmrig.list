@@ -3,6 +3,7 @@ git
 build-essential
 cmake
 ninja
+pkg-config
 
 libgmp-dev
 libmpc-dev
