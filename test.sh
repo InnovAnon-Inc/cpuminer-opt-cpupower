@@ -1,9 +1,8 @@
 #! /usr/bin/env bash
 set -euxo pipefail
-#(( ! UID ))
+(( ! UID ))
 # shellcheck disable=SC2004
-(( ! $UID ))
-(( ! $# ))
+#(( ! $UID ))
 case $# in
   0)
     ARGS=default
