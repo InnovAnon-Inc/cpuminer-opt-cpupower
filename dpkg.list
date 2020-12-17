@@ -2,9 +2,10 @@
 libcurl4
 libjansson4
 libssl1.1
+zlib1g
+
 libgmp10
+libisl22
 libmpc3
 libmpfr6
-libisl22
-zlib1g
 

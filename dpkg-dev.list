@@ -1,16 +1,17 @@
 #! /usr/bin/env -S tail -n+2
-git
-build-essential
 autoconf
 automake
+build-essential
+git
 pkg-config
+
+libgmp-dev
+libisl-dev
+libmpc-dev
+libmpfr-dev
 
 libcurl4-openssl-dev
 libjansson-dev
 libssl-dev
-libgmp-dev
-libmpc-dev
-libmpfr-dev
-libisl-dev
 zlib1g-dev
 
