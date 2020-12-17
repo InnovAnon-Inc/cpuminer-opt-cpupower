@@ -1,0 +1,26 @@
+version: 2.1
+
+commands:
+  build:
+    steps:
+      - checkout
+      - run:
+          name: Lint
+          command: |
+            # TODO
+      - run:
+          name: Push to Upstream
+          command: |
+            # TODO
+            #
+jobs:
+  build:
+    machine: true
+    steps:
+      - build
+
+workflows:
+  build:
+    jobs:
+      - build
+
