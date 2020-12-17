@@ -6,6 +6,7 @@ git
 pkg-config
 
 libgmp-dev
+libisl-dev
 libmpc-dev
 libmpfr-dev
 

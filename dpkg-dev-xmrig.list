@@ -2,7 +2,6 @@
 build-essential
 cmake
 git
-ninja
 pkg-config
 
 libgmp-dev
