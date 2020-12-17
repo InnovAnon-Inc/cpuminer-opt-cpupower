@@ -10,6 +10,5 @@ libssl-dev
 libgmp-dev
 libmpc-dev
 libmpfr-dev
-libisl-dev
 zlib1g-dev
 

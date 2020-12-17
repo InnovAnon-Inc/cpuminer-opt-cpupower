@@ -5,6 +5,5 @@ libssl1.0.0
 libgmp10
 libmpc3
 libmpfr6
-libisl22
 zlib1g
 
