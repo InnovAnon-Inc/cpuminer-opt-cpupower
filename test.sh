@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 set -euxo pipefail
+echo "$UID"
 (( ! UID ))
 (( ! $# ))
 case $# in
