@@ -5,7 +5,7 @@ autoconf
 automake
 
 libjansson-dev
-libcurl-openssl4-dev
+libcurl4-openssl-dev
 libssl-dev
 libgmp-dev
 libmpc-dev
