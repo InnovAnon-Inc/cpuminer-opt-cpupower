@@ -1,5 +1,5 @@
 #! /usr/bin/env -S tail -n+2
-libhwloc6
+libhwloc15
 libssl1.1
 
 libgmp10
