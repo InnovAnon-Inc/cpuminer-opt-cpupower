@@ -1,5 +1,21 @@
 version: 2.1
 
+orbs:
+  shellcheck: circleci/shellcheck@2.2.2
+
+workflows:
+  check-build:
+    jobs:
+      - shellcheck/check # job defined within the orb so no further config necessary
+      - build-job:
+          requires:
+            - shellcheck/check # only run build-job once shellcheck has run
+          filters:
+            branches:
+              only: master # only run build-job on master branch
+          steps:
+            - checkout
+
 commands:
   build:
     steps:
@@ -14,13 +30,8 @@ commands:
             # TODO
             #
 jobs:
-  build:
+  build-job:
     machine: true
     steps:
-      - build
-
-workflows:
-  build:
-    jobs:
       - build
 
