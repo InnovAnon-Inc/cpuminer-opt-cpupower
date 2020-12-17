@@ -7,7 +7,7 @@ workflows:
       - shellcheck/check:
           dir: .
           external_sources: false
-          format: checkstyle
+          #format: checkstyle
           severity: style
       - deploy
 
