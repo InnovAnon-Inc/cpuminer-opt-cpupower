@@ -15,5 +15,5 @@ esac
 
 CXXFLAGS="$CXXFLAGS $CFLAGS" \
   CFLAGS="$CFLAGS"           \
-cmake .. ${CONF} $*
+cmake .. $*
 
