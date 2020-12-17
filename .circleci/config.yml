@@ -110,14 +110,14 @@ commands:
               -b "$REPO"                                  \
               https://github.com/InnovAnon-Inc/docker.git \
                  "$REPO"
-            cd   "$REPO"                && sleep 1 # throttle github
+            cd   "$REPO"                && sleep 11 # throttle github
             rm -rf scripts
             git add .
             git commit -m '[CircleCI] updating subtree'
             git subtree add                               \
               --prefix scripts                            \
               https://github.com/InnovAnon-Inc/docker.git \
-                       scripts --squash && sleep 1 # throttle github
-            #git push #                  && sleep 1 # throttle github
+                       scripts --squash && sleep 11 # throttle github
+            #git push #                  && sleep 11 # throttle github
             git push https://${GITHUB_TOKEN}@github.com/InnovAnon-Inc/docker.git "$REPO"
 
