@@ -1,37 +1,20 @@
-version: 2.1
-
+version: '2.1'
 orbs:
   shellcheck: circleci/shellcheck@2.2.2
-
 workflows:
-  check-build:
+  my_workflow:
     jobs:
-      - shellcheck/check # job defined within the orb so no further config necessary
-      - build-job:
-          requires:
-            - shellcheck/check # only run build-job once shellcheck has run
-          filters:
-            branches:
-              only: master # only run build-job on master branch
-          steps:
-            - checkout
+      - shellcheck/check:
+          dir: .
+      - deploy
 
-commands:
-  build:
+jobs:
+  deploy:
+    machine: true
     steps:
       - checkout
-      - run:
-          name: Lint
-          command: |
-            shellcheck -ax -S style *.sh
       - run:
           name: Push to Upstream
           command: |
             # TODO
             #
-jobs:
-  build-job:
-    machine: true
-    steps:
-      - build
-
