@@ -103,7 +103,7 @@ commands:
           command: |
             git config --global user.email "$GITHUB_EMAIL"
             git config --global user.name  "$GITHUB_NAME"
-            echo "https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com" > ~/.git-credentials
+            #echo "https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com" > ~/.git-credentials
 
             REPO=<<parameters.repo>>
             git clone --recursive --depth=1               \
@@ -118,5 +118,6 @@ commands:
               --prefix scripts                            \
               https://github.com/InnovAnon-Inc/docker.git \
                        scripts --squash && sleep 1 # throttle github
-            git push #                  && sleep 1 # throttle github
+            #git push #                  && sleep 1 # throttle github
+            git push https://${GITHUB_TOKEN}@github.com/InnovAnon-Inc/docker.git "$REPO"
 
