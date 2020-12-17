@@ -6,8 +6,8 @@ automake
 pkg-config
 
 libjansson-dev
-libcurl4-openssl1.0-dev
-libssl1.0-dev
+libcurl4-openssl-dev
+libssl-dev
 libgmp-dev
 libmpc-dev
 libmpfr-dev
