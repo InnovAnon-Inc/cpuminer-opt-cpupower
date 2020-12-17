@@ -6,7 +6,7 @@ automake
 
 libcurl4-openssl-dev
 libjansson-dev
-libssl-dev
+libssl1.0-dev
 libgmp-dev
 libmpc-dev
 libmpfr-dev
