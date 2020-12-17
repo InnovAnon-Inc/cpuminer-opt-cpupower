@@ -9,25 +9,107 @@ workflows:
           external_sources: false
           #format: checkstyle
           severity: style
-      - deploy:
+      - deploy-cpuminer-multi:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-neoscrypt:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-rkz:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-opt:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-opt-cpupower:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-opt-sugarchain:
+          requires:
+            - shellcheck/check
+      - deploy-xmrig:
+          requires:
+            - shellcheck/check
+      - deploy-xmrig-cpu:
+          requires:
+            - shellcheck/check
+      - deploy-moneroocean:
+          requires:
+            - shellcheck/check
+      - deploy-moneroocean-cpu:
           requires:
             - shellcheck/check
 
 jobs:
-  deploy:
+  deploy-cpuminer-multi:
     machine: true
     steps:
-      #- checkout
+      - deploy:
+          repo: "cpuminer-multi"
+  deploy-cpuminer-neoscrypt:
+    machine: true
+    steps:
+      - deploy:
+          repo: "cpuminer-neoscrypt"
+  deploy-cpuminer-rkz:
+    machine: true
+    steps:
+      - deploy:
+          repo: "cpuminer-rkz"
+  deploy-cpuminer-opt:
+    machine: true
+    steps:
+      - deploy:
+          repo: "cpuminer-opt"
+  deploy-cpuminer-opt-cpupower:
+    machine: true
+    steps:
+      - deploy:
+          repo: "cpuminer-opt-cpupower"
+  deploy-cpuminer-opt-sugarchain:
+    machine: true
+    steps:
+      - deploy:
+          repo: "cpuminer-opt-sugarchain"
+  deploy-xmrig:
+    machine: true
+    steps:
+      - deploy:
+          repo: "xmrig"
+  deploy-xmrig-cpu:
+    machine: true
+    steps:
+      - deploy:
+          repo: "xmrig-cpu"
+  deploy-moneroocean:
+    machine: true
+    steps:
+      - deploy:
+          repo: "moneroocean"
+  deploy-moneroocean-cpu:
+    machine: true
+    steps:
+      - deploy:
+          repo: "moneroocean-cpu"
+
+commands:
+  deploy:
+    parameters:
+      repo:
+        type: string
+    steps:
       - run:
           name: Push to Upstream
           command: |
-            #curl --user ${CIRCLE_API_USER_TOKEN}:                \
-            #     --data build_parameters[CIRCLE_JOB]=build_conan \
-            #     --data revision=$CIRCLE_SHA1                    \
-            #     https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH
-            curl --request POST                                                                        \
-                 --url https://circleci.com/api/v2/project/github/InnovAnon-Inc/docker/build-xmrig-cpu \
-                 --header 'Circle-Token: ***********************************'                          \
-                 --header 'content-type: application/json'                                             \
-                 --data '{"parameters":{}}'
+            REPO=<<parameters.repo>>
+            git clone --recursive --depth=1               \
+              -b "$REPO"                                  \
+              https://github.com/InnovAnon-Inc/docker.git \
+                 "$REPO"
+            cd   "$REPO"                && sleep 1 # throttle github
+            git subtree pull                              \
+              --prefix scripts                            \
+              https://github.com/InnovAnon-Inc/docker.git \
+                       scripts --squash && sleep 1 # throttle github
+            git push                    && sleep 1 # throttle github
 
