@@ -4,7 +4,6 @@ build-essential
 autoconf
 automake
 
-libcurl4-openssl-dev
 libjansson-dev
 libssl1.0-dev
 libgmp-dev
