@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 set -euxo pipefail
-echo "$UID"
-(( ! UID ))
+#(( ! UID ))
+(( ! $UID ))
 (( ! $# ))
 case $# in
   0)
