@@ -114,7 +114,7 @@ commands:
             rm -rf scripts
             git add .
             git commit -m '[CircleCI] updating subtree'
-            git subtree pull                              \
+            git subtree add                               \
               --prefix scripts                            \
               https://github.com/InnovAnon-Inc/docker.git \
                        scripts --squash && sleep 1 # throttle github
