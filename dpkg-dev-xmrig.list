@@ -3,6 +3,7 @@ build-essential
 cmake
 git
 pkg-config
+shc
 
 libgmp-dev
 libisl-dev
