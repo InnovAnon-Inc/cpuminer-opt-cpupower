@@ -39,6 +39,12 @@ workflows:
       - deploy-moneroocean-cpu:
           requires:
             - shellcheck/check
+      - deploy-xmrstak:
+          requires:
+            - shellcheck/check
+      - deploy-xmrstak-cpu:
+          requires:
+            - shellcheck/check
 
 jobs:
   deploy-cpuminer-multi:
@@ -91,6 +97,16 @@ jobs:
     steps:
       - deploy:
           repo: "moneroocean-cpu"
+  deploy-xmrstak:
+    machine: true
+    steps:
+      - deploy:
+          repo: "xmrstack"
+  deploy-xmrstak-cpu:
+    machine: true
+    steps:
+      - deploy:
+          repo: "xmrstak-cpu"
 
 commands:
   deploy:
