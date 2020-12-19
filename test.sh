@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#! /bin/bash
 #! /usr/bin/env bash
 set -euxo pipefail
 (( ! UID ))

@@ -9,24 +9,24 @@ workflows:
           external_sources: false
           #format: checkstyle
           severity: style
-#      - deploy-cpuminer-multi:
-#          requires:
-#            - shellcheck/check
-#      - deploy-cpuminer-neoscrypt:
-#          requires:
-#            - shellcheck/check
-#      - deploy-cpuminer-rkz:
-#          requires:
-#            - shellcheck/check
-#      - deploy-cpuminer-opt:
-#          requires:
-#            - shellcheck/check
-#      - deploy-cpuminer-opt-cpupower:
-#          requires:
-#            - shellcheck/check
-#      - deploy-cpuminer-opt-sugarchain:
-#          requires:
-#            - shellcheck/check
+      - deploy-cpuminer-multi:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-neoscrypt:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-rkz:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-opt:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-opt-cpupower:
+          requires:
+            - shellcheck/check
+      - deploy-cpuminer-opt-sugarchain:
+          requires:
+            - shellcheck/check
       - deploy-xmrig:
           requires:
             - shellcheck/check
