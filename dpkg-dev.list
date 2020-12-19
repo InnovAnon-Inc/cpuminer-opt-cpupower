@@ -4,6 +4,7 @@ automake
 build-essential
 git
 pkg-config
+shc
 
 libgmp-dev
 libisl-dev
