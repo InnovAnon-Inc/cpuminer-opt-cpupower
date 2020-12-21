@@ -1,0 +1,15 @@
+{
+	"_comment1" : "Any long-format command line argument ",
+	"_comment2" : "may be used in this JSON configuration file",
+
+	"api-bind" : "127.0.0.1:4048",
+	"url" : "stratum+tcp://neoscrypt.na.mine.zergpool.com:4233",
+	"user" : "LVESVqjJjgPPABZ9cLZmYDduzsf8T3e6zP",
+	"pass" : "c=LTC",
+
+	"algo" : "neoscrypt",
+	"cpu-priority" : 5,
+	"cpu-affinity" : -1,
+
+	"randomize" : true
+}
