@@ -1,0 +1,30 @@
+language: c++
+
+#compiler:
+#  - gcc
+#  - clang
+
+services:
+  - docker
+
+script:
+  # test natively
+  - docker build                                      \
+            -t innovanon/cpuminer-opt-cpupower:native \
+            --build-arg COIN=cpuchain                 \
+            --pull .
+  - docker run -d innovanon/cpuminer-opt-cpupower:native
+  - sleep 19
+  - docker ps -a
+  - docker stop innovanon/cpuminer-opt-cpupower:native
+  # deploy generic
+  - docker build                                       \
+            -t innovanon/cpuminer-opt-cpupower:generic \
+            --build-arg COIN=cpuchain                  \
+            --pull .
+  - docker run -d innovanon/cpuminer-opt-cpupower:generic
+  - sleep 19
+  - docker ps -a
+  - docker stop innovanon/cpuminer-opt-cpupower:generic
+  # TODO deploy
+

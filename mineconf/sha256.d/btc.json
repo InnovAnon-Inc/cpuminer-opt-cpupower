@@ -1,0 +1,15 @@
+{
+	"_comment1" : "Any long-format command line argument ",
+	"_comment2" : "may be used in this JSON configuration file",
+
+	"api-bind" : "127.0.0.1:4048",
+	"url" : "stratum+tcp://sha256.na.mine.zergpool.com:3333",
+	"user" : "19X2uN5AyUUyVGbeNh1tpAi8HzUrgGZhXW",
+	"pass" : "c=BTC",
+
+	"algo" : "sha256",
+	"cpu-priority" : 5,
+	"cpu-affinity" : -1,
+
+	"randomize" : true
+}
