@@ -123,9 +123,10 @@ commands:
 
             REPO=<<parameters.repo>>
             git clone --recursive --depth=1               \
-              -b "$REPO"                                  \
-              https://github.com/InnovAnon-Inc/docker.git \
-                 "$REPO"
+              "https://github.com/InnovAnon-Inc/$REPO.git"
+            #  -b "$REPO"                                  \
+            #  https://github.com/InnovAnon-Inc/docker.git \
+            #     "$REPO"
             cd   "$REPO"                && sleep 11 # throttle github
             rm -rf scripts
             git add .
@@ -135,5 +136,6 @@ commands:
               https://github.com/InnovAnon-Inc/docker.git \
                        scripts --squash && sleep 11 # throttle github
             #git push #                  && sleep 11 # throttle github
-            git push https://${GITHUB_TOKEN}@github.com/InnovAnon-Inc/docker.git "$REPO"
+            #git push https://${GITHUB_TOKEN}@github.com/InnovAnon-Inc/docker.git "$REPO"
+            git push "https://${GITHUB_TOKEN}@github.com/InnovAnon-Inc/$REPO.git"
 
