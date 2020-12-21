@@ -28,3 +28,9 @@ script:
   - docker stop innovanon/cpuminer-opt-cpupower:generic
   # TODO deploy
 
+branches:
+  only:
+    - master
+rvm:
+ - 2.4
+
