@@ -1,0 +1,11 @@
+#! /usr/bin/env -S tail -n+2
+libhwloc15
+libssl1.1
+
+libgmp10
+libisl22
+libmpc3
+libmpfr6
+
+xz-utils
+
